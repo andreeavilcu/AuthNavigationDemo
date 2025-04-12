@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "2.0.21"
+    id("androidx.navigation.safeargs.kotlin")
 }
+
+
 
 android {
     namespace = "com.example.androidauthnavigationdemo"
@@ -36,8 +40,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,4 +48,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Jetpack Compose integration
+    implementation(libs.androidx.navigation.compose)
+
+    // Views/Fragments integration
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+
+    // Feature module support for Fragments
+    implementation(libs.androidx.navigation.dynamic.features.fragment)
+
+    // Testing Navigation
+    androidTestImplementation(libs.androidx.navigation.testing)
+
+    // JSON serialization library, works with the Kotlin serialization plugin
+    implementation(libs.kotlinx.serialization.json)
+
 }

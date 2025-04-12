@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.androidauthnavigationdemo.ProfileFragment"
+        android:name="com.example.androidauthnavigationdemo.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/registerStep1Fragment"
-        android:name="com.example.androidauthnavigationdemo.ProfileFragment"
+        android:name="com.example.androidauthnavigationdemo.RegisterStep1Fragment"
         android:label="Register Step 1"
         tools:layout="@layout/fragment_register_step1">
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/registerStep2Fragment"
-        android:name="com.example.androidauthnavigationdemo.ProfileFragment"
+        android:name="com.example.androidauthnavigationdemo.RegisterStep2Fragment"
         android:label="Register Step 2"
         tools:layout="@layout/fragment_register_step2">
         <action

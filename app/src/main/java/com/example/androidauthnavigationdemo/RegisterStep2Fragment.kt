@@ -1,4 +1,6 @@
 package com.example.androidauthnavigationdemo
 
-class RegisterStep2Fragment {
+import androidx.fragment.app.Fragment
+
+class RegisterStep2Fragment : Fragment() {
 }

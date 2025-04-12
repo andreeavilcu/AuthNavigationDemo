@@ -1,4 +1,6 @@
 package com.example.androidauthnavigationdemo
 
-class ProfileFragment {
+import androidx.fragment.app.Fragment
+
+class ProfileFragment : Fragment() {
 }
