@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+
     override fun onBackPressed() {
         val currentDestination = navController.currentDestination?.id
         when (currentDestination) {
@@ -32,8 +33,7 @@ class MainActivity : AppCompatActivity() {
             R.id.registerStep1Fragment, R.id.registerStep2Fragment ->{
                 navController.navigate(R.id.loginFragment)
             }
-            R.id.profileFragment ->
-            {
+            R.id.profileFragment -> {
                 finish()
             }
             else -> {

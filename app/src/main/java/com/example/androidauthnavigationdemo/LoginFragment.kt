@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
 
-            val action = LoginFragmentDirections.actionLoginToProfile()
+            val action = LoginFragmentDirections.actionLoginToProfile(email)
             findNavController().navigate(action)
         }
 
