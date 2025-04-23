@@ -17,10 +17,15 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        val navInflater = navController.navInflater
+        val navGraph = navInflater.inflate(R.navigation.auth_nav_graph)
+        navController.graph = navGraph
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+
     }
 
 

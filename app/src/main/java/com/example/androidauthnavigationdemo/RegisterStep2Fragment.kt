@@ -28,12 +28,12 @@ class RegisterStep2Fragment : Fragment() {
         emailInfoTextView = view.findViewById(R.id.emailInfoTextView)
         registerButton = view.findViewById(R.id.registerButton)
 
-        // Afișare email trimis din Step 1
         emailInfoTextView.text = "Selected email: ${args.email}"
 
         registerButton.setOnClickListener {
+            val email = args.email
 
-            val action = RegisterStep2FragmentDirections.actionRegisterStep2ToProfile(args.email)
+            val action = RegisterStep2FragmentDirections.actionRegisterStep2ToProfile(email)
             findNavController().navigate(action)
         }
     }

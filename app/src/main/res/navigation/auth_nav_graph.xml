@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_nav_graph"
+    android:id="@+id/auth_nav_graph"
     app:startDestination="@id/loginFragment">
 
     <fragment
@@ -15,9 +15,11 @@
             app:destination="@id/registerStep1Fragment" />
         <action
             android:id="@+id/action_login_to_profile"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/profile_nav_graph">
+            <argument
+                android:name="email"
+                app:argType="string" />
+        </action>
     </fragment>
 
     <fragment
@@ -47,26 +49,15 @@
         tools:layout="@layout/fragment_register_step2">
         <action
             android:id="@+id/action_register_step2_to_profile"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/profile_nav_graph">
+            <argument
+                android:name="email"
+                app:argType="string" />
+        </action>
         <argument
             android:name="email"
             app:argType="string" />
     </fragment>
 
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.androidauthnavigationdemo.ProfileFragment"
-        android:label="Profile"
-        tools:layout="@layout/fragment_profile">
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_profile_to_auth"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/profileFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+    <include app:graph="@navigation/profile_nav_graph" />
 </navigation>
